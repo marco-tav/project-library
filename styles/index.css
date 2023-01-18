@@ -1,3 +1,157 @@
+@font-face {
+  /* Oswald FW: 200, FS: normal */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-extralight-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-extralight-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 200, FS: italic */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-extra-lightitalic-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-extra-lightitalic-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 300, FS: normal */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-light-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 300, FS: italic */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-lightitalic-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-lightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 400, FS: normal */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-regular-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 400, FS: italic */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-regularitalic-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-regularitalic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 500, FS: normal */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-medium-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 500, FS: italic */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-mediumitalic-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-mediumitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 700, FS: normal */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-bold-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Oswald FW: 700, FS: italic */
+  font-family: 'Oswald';
+  src:
+    url('../resources/fonts/oswald/oswald-bolditalic-webfont.woff2') format('woff2'),
+    url('../resources/fonts/oswald/oswald-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  /* Source Serif Pro FW: 400, FS: normal */
+  font-family: 'Source Serif Pro';
+  src:
+    url('../resources/fonts/sourceserifpro/sourceserifpro-regular-webfont.woff2') format('woff2'),
+    url('../resources/fonts/sourceserifpro/sourceserifpro-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Source Serif Pro FW: 400, FS: italic */
+  font-family: 'Source Serif Pro';
+  src:
+    url('../resources/fonts/sourceserifpro/sourceserifpro-regularit-webfont.woff2') format('woff2'),
+    url('../resources/fonts/sourceserifpro/sourceserifpro-regularit-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  /* Source Serif Pro FW: 700, FS: normal */
+  font-family: 'Source Serif Pro';
+  src:
+    url('../resources/fonts/sourceserifpro/sourceserifpro-bold-webfont.woff2') format('woff2'),
+    url('../resources/fonts/sourceserifpro/sourceserifpro-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Source Serif Pro FW: 700, FS: italic */
+  font-family: 'Source Serif Pro';
+  src:
+    url('../resources/fonts/sourceserifpro/sourceserifpro-boldit-webfont.woff2') format('woff2'),
+    url('../resources/fonts/sourceserifpro/sourceserifpro-boldit-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Box sizing reset */
 
 html {
@@ -6,4 +160,37 @@ html {
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+header {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgreen;
+}
+
+header > h1 {
+  font-size: 4rem;
+  color: lightgray;
+  font-family: 'Oswald';
+}
+
+.book-list {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.book-display {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
