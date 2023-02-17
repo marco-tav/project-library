@@ -163,6 +163,7 @@ html {
 }
 
 body {
+  position: relative;
   height: 100vh;
   width: 100vw;
   display: grid;
@@ -188,9 +189,24 @@ header > h1 {
 .book-list {
   grid-column: 1/2;
   grid-row: 2/3;
+  background-color: lightgray;
 }
 
 .book-display {
   grid-column: 2/3;
   grid-row: 2/3;
+}
+
+.add-book {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  height: 60px;
+  width: 140px;
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 1.6rem;
+  background-color: orange;
+  border: none;
+  border-radius: 8px;
 }
