@@ -10,13 +10,42 @@
 </head>
 <body>
   <div class="form-container">
-
+    <a href="#">
+      <h1>library</h1>
+    </a>
+    <form action="">
+      <fieldset>
+        <legend>Add a book</legend>
+        <div>
+          <label for="book-title">Title</label>
+          <input type="text" id="book-title" name="bookTitle" required>
+        </div>
+        <div>
+          <label for="book-author">Author</label>
+          <input type="text" id="book-author" name="bookAuthor" required>
+        </div>
+        <div>
+          <label for="book-genre">Genre</label>
+          <input type="text" id="book-genre" name="bookGenre">
+        </div>
+        <div>
+          <label for="book-pages">Pages</label>
+          <input type="text" id="book-pages" name="numberOfPages">
+        </div>
+        <div>
+          <label for="book-read">Read</label>
+          <input type="checkbox" id="book-read" name="bookRead" value="read">
+        </div>
+        <button type="submit">Add</button>
+      </fieldset>
+    </form>
   </div>
+
   <div class="books-container">
 
   </div>
   <footer>
-
+    <p>by <a href="https://github.com/marco-tav">marcotav</a></p>
   </footer>
 </body>
 </html>

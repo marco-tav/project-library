@@ -13,25 +13,106 @@ body {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 24fr 1fr;
-}
-
-body > * {
-  border: 2px solid red;
+  grid-template-columns: 2fr 9fr;
+  grid-template-rows: 96vh 4vh;
+  font-family: var(--system-serif);
 }
 
 .form-container {
+  background-color: rgb(66, 135, 245);
   grid-row: 1 / 2;
   grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 10px;
+}
+
+.form-container a {
+  text-decoration: none;
+  font-family: var(--system-serif);
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
+}
+
+.form-container h1 {
+  margin: 0;
+}
+
+form {
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+fieldset {
+  width: 100%;
+  border: none;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  justify-items: end;
+  gap: 25px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+}
+
+fieldset > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 5px;
+}
+
+form input:not([type="checkbox"]) {
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+}
+
+form button {
+  justify-self: start;
+  background-color: rgb(255, 227, 175);
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
 }
 
 .books-container {
+  background-color: rgb(206, 219, 240);
   grid-row: 1 / 2;
   grid-column: 2 / 3;
 }
 
 footer {
+  background-color: rgb(46, 46, 46);
   grid-row: 2 / 3;
   grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(206, 219, 240);
+}
+
+footer a {
+  text-decoration: underline;
+  color: rgb(206, 219, 240);
 }
