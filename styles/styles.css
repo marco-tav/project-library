@@ -106,6 +106,8 @@ form input:not([type="checkbox"]) {
   border: none;
   border-radius: 5px;
   width: 100%;
+  padding-left: 5px;
+  font-family: var(--system-mono);
 }
 
 input[type="checkbox"] {
