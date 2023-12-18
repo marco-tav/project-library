@@ -169,10 +169,10 @@ input[type="checkbox"]:checked {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 250px;
+  gap: 1.5rem;
 }
 
 .book-card {
-  width: 250px;
   padding: 15px;
   background-color: white;
   border-radius: 8px;
