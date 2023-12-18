@@ -17,6 +17,7 @@ body {
   grid-template-columns: 2fr 9fr;
   grid-template-rows: 96vh 4vh;
   font-family: var(--system-serif);
+  background-color: rgb(206, 219, 240);
 }
 
 .form-container {
@@ -28,14 +29,25 @@ body {
   align-items: center;
   gap: 50px;
   padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .form-container a {
+  width: 100%;
   text-decoration: none;
-  font-family: var(--system-serif);
+  font-family: var(--system-mono);
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: black;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid black;
+}
+
+a > h1 {
+  display: flex;
+  justify-content: center;
 }
 
 .form-container h1 {
@@ -49,7 +61,6 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
 }
 
 fieldset {
