@@ -211,6 +211,7 @@ input[type="checkbox"]:checked {
   background-color: white;
   cursor: pointer;
   font-size: 0.8rem;
+  text-decoration: underline;
 }
 
 footer {
