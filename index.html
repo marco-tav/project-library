@@ -13,28 +13,28 @@
     <a href="#">
       <h1>library</h1>
     </a>
-    <form id="add-book" action="">
+    <form id="add-book" action="#" method="get">
       <fieldset>
         <legend>add a book</legend>
         <div>
           <label for="book-title">title</label>
-          <input type="text" id="book-title" name="bookTitle" required>
+          <input type="text" id="book-title" name="bookTitle" placeholder="The Hobbit" required>
         </div>
         <div>
           <label for="book-author">author</label>
-          <input type="text" id="book-author" name="bookAuthor" required>
+          <input type="text" id="book-author" name="bookAuthor"  placeholder="J.R.R. Tolkien">
         </div>
         <div>
           <label for="book-genre">genre</label>
-          <input type="text" id="book-genre" name="bookGenre">
+          <input type="text" id="book-genre" name="bookGenre" placeholder="Fantasy">
         </div>
         <div>
           <label for="book-pages">pages</label>
-          <input type="number" id="book-pages" name="numberOfPages">
+          <input type="number" id="book-pages" name="numberOfPages" placeholder="310">
         </div>
         <div>
-          <label for="book-read">read</label>
-          <input type="checkbox" id="book-read" name="bookRead" value="read">
+          <label for="book-read">already read it</label>
+          <input type="checkbox" id="book-read" name="bookRead" value="read" checked>
         </div>
       </fieldset>
     </form>
