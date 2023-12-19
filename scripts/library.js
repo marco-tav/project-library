@@ -3,7 +3,7 @@ const bookAuthor = document.getElementById('book-author');
 const bookGenre = document.getElementById('book-genre');
 const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
-const submitBtn = document.getElementById('subit');
+const submitBtn = document.getElementById('submit');
 
 const bookArray = [];
 
