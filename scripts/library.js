@@ -10,10 +10,10 @@ function Book(title, author, genre, pages, read = false, onDisplay = false) {
 }
 
 Book.prototype.setRead = function() {
-  if(!this.read) {
-    this.read = false;
+  if(this.read === "not read") {
+    this.read = "read";
   } else {
-    this.read = true;
+    this.read = "not read";
   }
 }
 
