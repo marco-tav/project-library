@@ -1,11 +1,4 @@
-const bookTitle = document.getElementById('book-title');
-const bookAuthor = document.getElementById('book-author');
-const bookGenre = document.getElementById('book-genre');
-const bookPages = document.getElementById('book-pages');
-const bookRead = document.getElementById('book-read');
-const submitBtn = document.getElementById('submit');
-
-const bookArray = [];
+/* ---------------- FUNCTION DECLARATIONS ------------------ */
 
 function Book(title, author, genre, pages, read = false) {
   this.title = title;
@@ -27,6 +20,57 @@ function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) 
   pagesInput.value = "";
   readInput.checked = true;
 }
+
+function createBookCard(book) {
+  const bookCard = document.createElement('div');
+  bookCard.classList.add('book-card');
+
+  const title = document.createElement('h2');
+  title.innerText = book.title;
+  bookCard.appendChild(title);
+
+  const author = document.createElement('p');
+  author.innerText = book.author;
+  bookCard.appendChild(author);
+
+  const genre = document.createElement('p');
+  genre.innerText = book.genre;
+  bookCard.appendChild(genre);
+
+  const pages = document.createElement('p');
+  pages.innerText = `${book.pages}`;
+  bookCard.appendChild(pages);
+
+  const wasRead = document.createElement('p');
+  wasRead.innerText = book.read;
+  bookCard.appendChild(wasRead);
+
+  const controlsDiv = document.createElement('div');
+  controlsDiv.classList.add('card-controls');
+
+  const readBtn = document.createElement('button');
+  readBtn.innerText = 'mark as read';
+  controlsDiv.appendChild(readBtn);
+
+  const removeBookBtn = document.createElement('button');
+  removeBookBtn.innerText = 'remove';
+  controlsDiv.appendChild(removeBookBtn);
+
+  bookCard.appendChild(controlsDiv);
+
+  return bookCard;
+}
+
+/* ------------------------ MAIN PROGRAM ------------------ */
+
+const bookTitle = document.getElementById('book-title');
+const bookAuthor = document.getElementById('book-author');
+const bookGenre = document.getElementById('book-genre');
+const bookPages = document.getElementById('book-pages');
+const bookRead = document.getElementById('book-read');
+const submitBtn = document.getElementById('submit');
+
+const bookArray = [];
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
