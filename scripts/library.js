@@ -10,7 +10,11 @@ function Book(title, author, genre, pages, read = false, onDisplay = false) {
 }
 
 Book.prototype.setRead = function() {
-  this.read = true;
+  if(!this.read) {
+    this.read = false;
+  } else {
+    this.read = true;
+  }
 }
 
 function createAndStoreBook(title, author, genre, pages, read, arr) {
