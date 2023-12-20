@@ -25,6 +25,11 @@ function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) 
 function createBookCard(book) {
   const bookCard = document.createElement('div');
   bookCard.classList.add('book-card');
+  if (book.read === 'read') {
+    bookCard.classList.add('book-card-read');
+  } else {
+    bookCard.classList.add('book-card-not-read');
+  }
 
   const title = document.createElement('h2');
   title.innerText = book.title;
