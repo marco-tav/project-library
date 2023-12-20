@@ -9,7 +9,7 @@ function Book(title, author, genre, pages, read = false, onDisplay = false) {
   this.onDisplay = onDisplay;
 }
 
-Book.prototype.setRead = function() {
+Book.prototype.toggleRead = function() {
   if(this.read === "not read") {
     this.read = "read";
   } else {
