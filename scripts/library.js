@@ -1,4 +1,4 @@
-const bookName = document.getElementById('book-title');
+const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const bookGenre = document.getElementById('book-genre');
 const bookPages = document.getElementById('book-pages');
@@ -11,6 +11,20 @@ function Book(title, author, genre, pages, read = false) {
   this.title = title;
   this.author = author;
   this.genre = genre;
-  this.pages = pages;
+  this.pages = +pages;
   this.read = read ? "read" : "not read";
 }
+
+function createAndStoreBook(title, author, genre, pages, read, arr) {
+  let book = new Book(title, author, genre, pages, read);
+  arr.push(book);
+}
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(!bookTitle.value || !bookAuthor.value) {
+    alert('You need to include a title and an author!');
+  } else {
+    createAndStoreBook(bookTitle.value, bookAuthor.value, bookGenre.value, bookPages.value, bookRead.checked, bookArray);
+  }
+})
