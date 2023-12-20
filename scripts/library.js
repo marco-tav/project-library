@@ -1,11 +1,12 @@
 /* ---------------- FUNCTION DECLARATIONS ------------------ */
 
-function Book(title, author, genre, pages, read = false) {
+function Book(title, author, genre, pages, read = false, onDisplay = false) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = +pages;
   this.read = read ? "read" : "not read";
+  this.onDisplay = onDisplay;
 }
 
 function createAndStoreBook(title, author, genre, pages, read, arr) {
@@ -69,6 +70,7 @@ const bookGenre = document.getElementById('book-genre');
 const bookPages = document.getElementById('book-pages');
 const bookRead = document.getElementById('book-read');
 const submitBtn = document.getElementById('submit');
+const booksContainer = document.querySelector('.books-container');
 
 const bookArray = [];
 
@@ -80,4 +82,12 @@ submitBtn.addEventListener('click', (e) => {
     createAndStoreBook(bookTitle.value, bookAuthor.value, bookGenre.value, bookPages.value, bookRead.checked, bookArray);
     resetInput(bookTitle, bookAuthor, bookGenre, bookPages, bookRead);
   }
+
+  bookArray.forEach((book) => {
+    const bookCard = createBookCard(book);
+    if(!book.onDisplay) {
+      booksContainer.appendChild(bookCard);
+      book.onDisplay = true;
+    }
+  })
 })
