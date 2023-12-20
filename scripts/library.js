@@ -20,7 +20,7 @@ function createAndStoreBook(title, author, genre, pages, read, arr) {
   arr.push(book);
 }
 
-function cleanInput(titleInput, authorInput, genreInput, pagesInput, readInput) {
+function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) {
   titleInput.value = "";
   authorInput.value = "";
   genreInput.value = "";
@@ -34,6 +34,6 @@ submitBtn.addEventListener('click', (e) => {
     alert('You need to include a title and an author!');
   } else {
     createAndStoreBook(bookTitle.value, bookAuthor.value, bookGenre.value, bookPages.value, bookRead.checked, bookArray);
-    cleanInput(bookTitle, bookAuthor, bookGenre, bookPages, bookRead);
+    resetInput(bookTitle, bookAuthor, bookGenre, bookPages, bookRead);
   }
 })
