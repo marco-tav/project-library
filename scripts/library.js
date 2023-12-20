@@ -9,6 +9,10 @@ function Book(title, author, genre, pages, read = false, onDisplay = false) {
   this.onDisplay = onDisplay;
 }
 
+Book.prototype.setRead = function() {
+  this.read = true;
+}
+
 function createAndStoreBook(title, author, genre, pages, read, arr) {
   let book = new Book(title, author, genre, pages, read);
   arr.push(book);
