@@ -184,12 +184,12 @@ input[type="checkbox"]:checked {
 }
 
 .book-card-read {
-  background-color: rgb(255, 237, 205);
+  background-color: rgb(255, 244, 226);
   border-left: 8px solid rgb(255, 208, 120);
 }
 
 .book-card-not-read {
-  background-color: rgb(196, 214, 243);
+  background-color: rgb(216, 227, 247);
   border-left: 8px solid rgb(66, 135, 245);
 }
 
