@@ -30,8 +30,10 @@ function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) 
   readInput.checked = true;
 }
 
-function createBookCard(book) {
+function createBookCard(book, array) {
   const bookCard = document.createElement('div');
+  let bookIndex = array.indexOf(book);
+  bookCard.setAttribute('data-index', `${bookIndex}`);
   bookCard.classList.add('book-card');
   if (book.read === 'read') {
     bookCard.classList.add('book-card-read');
@@ -97,7 +99,7 @@ submitBtn.addEventListener('click', (e) => {
   }
 
   bookArray.forEach((book) => {
-    const bookCard = createBookCard(book);
+    const bookCard = createBookCard(book, bookArray);
     if(!book.onDisplay) {
       booksContainer.appendChild(bookCard);
       book.onDisplay = true;
