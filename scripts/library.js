@@ -20,6 +20,7 @@ Book.prototype.toggleRead = function() {
 function createAndStoreBook(title, author, genre, pages, read, arr) {
   let book = new Book(title, author, genre, pages, read);
   arr.push(book);
+  return book;
 }
 
 function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) {
@@ -33,7 +34,7 @@ function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) 
 function createBookCard(book, array) {
   const bookCard = document.createElement('div');
   let bookIndex = array.indexOf(book);
-  bookCard.setAttribute('data-index', `${bookIndex}`);
+  bookCard.setAttribute('data-index', bookIndex);
   bookCard.classList.add('book-card');
   if (book.read === 'read') {
     bookCard.classList.add('book-card-read');
@@ -79,11 +80,11 @@ function createBookCard(book, array) {
 
 /* ------------------------ MAIN PROGRAM ------------------ */
 
-const bookTitle = document.getElementById('book-title');
-const bookAuthor = document.getElementById('book-author');
-const bookGenre = document.getElementById('book-genre');
-const bookPages = document.getElementById('book-pages');
-const bookRead = document.getElementById('book-read');
+const titleInput = document.getElementById('book-title');
+const authorInput = document.getElementById('book-author');
+const genreInput = document.getElementById('book-genre');
+const pagesInput = document.getElementById('book-pages');
+const readInput = document.getElementById('book-read');
 const submitBtn = document.getElementById('submit');
 const booksContainer = document.querySelector('.books-container');
 
@@ -91,18 +92,13 @@ const bookArray = [];
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if(!bookTitle.value || !bookAuthor.value) {
+  if(!titleInput.value || !authorInput.value) {
     alert('You need to include a title and an author!');
   } else {
-    createAndStoreBook(bookTitle.value, bookAuthor.value, bookGenre.value, bookPages.value, bookRead.checked, bookArray);
-    resetInput(bookTitle, bookAuthor, bookGenre, bookPages, bookRead);
-  }
+    const book = createAndStoreBook(titleInput.value, authorInput.value, genreInput.value, pagesInput.value, readInput.checked, bookArray);
+    resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
 
-  bookArray.forEach((book) => {
     const bookCard = createBookCard(book, bookArray);
-    if(!book.onDisplay) {
-      booksContainer.appendChild(bookCard);
-      book.onDisplay = true;
-    }
-  })
+    booksContainer.appendChild(bookCard);
+  }
 })
