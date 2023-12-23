@@ -66,10 +66,12 @@ function createBookCard(book, array) {
   controlsDiv.classList.add('card-controls');
 
   const readBtn = document.createElement('button');
+  readBtn.setAttribute('data-index', bookIndex);
   readBtn.innerText = 'mark as read';
   controlsDiv.appendChild(readBtn);
 
   const removeBookBtn = document.createElement('button');
+  removeBookBtn.setAttribute('data-index', bookIndex);
   removeBookBtn.innerText = 'remove';
   controlsDiv.appendChild(removeBookBtn);
 
@@ -92,13 +94,52 @@ const bookArray = [];
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  
   if(!titleInput.value || !authorInput.value) {
     alert('You need to include a title and an author!');
   } else {
     const book = createAndStoreBook(titleInput.value, authorInput.value, genreInput.value, pagesInput.value, readInput.checked, bookArray);
-    resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
+
+    let index = bookArray.indexOf(book);
 
     const bookCard = createBookCard(book, bookArray);
     booksContainer.appendChild(bookCard);
+
+    const markReadBtn = document.querySelector(`.book-card[data-index="${index}"] button:first-child`);
+    const removeBtn = document.querySelector(`.book-card[data-index="${index}"] button:last-child`);
+    const readPara = document.querySelector(`.book-card[data-index="${index}"] p:last-of-type`);
+
+    removeBtn.addEventListener('click', (e) => {
+      bookCard.remove();
+      bookArray.splice(index, 1);
+    })
+
+    markReadBtn.addEventListener('click', (e) => {
+      book.toggleRead();
+      readPara.innerText = book.read;
+      if(book.read === 'read') {
+        bookCard.classList.remove('book-card-not-read');
+        bookCard.classList.add('book-card-read');
+      } else {
+        bookCard.classList.remove('book-card-read');
+        bookCard.classList.add('book-card-not-read');
+      }
+    })
+
+    resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
   }
+
+  /*const markReadBtns = document.querySelectorAll('.book-card button:first-child');
+  const removeBtns = document.querySelectorAll('.book-card button:last-child');
+
+  removeBtns.forEach(button => {
+    button.addEventListener('click', (e) => {
+      let index = button.getAttribute('data-index');
+      let container = document.querySelector(`div[data-index="${index}"]`);
+      
+      console.log("activa3");
+      //bookArray.splice(index, 1);
+      //container.remove();
+    })
+  }) */
 })
