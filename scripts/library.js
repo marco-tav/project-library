@@ -128,18 +128,4 @@ submitBtn.addEventListener('click', (e) => {
 
     resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
   }
-
-  /*const markReadBtns = document.querySelectorAll('.book-card button:first-child');
-  const removeBtns = document.querySelectorAll('.book-card button:last-child');
-
-  removeBtns.forEach(button => {
-    button.addEventListener('click', (e) => {
-      let index = button.getAttribute('data-index');
-      let container = document.querySelector(`div[data-index="${index}"]`);
-      
-      console.log("activa3");
-      //bookArray.splice(index, 1);
-      //container.remove();
-    })
-  }) */
 })
