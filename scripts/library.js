@@ -80,6 +80,20 @@ function createBookCard(book, array) {
   return bookCard;
 }
 
+function shiftDataIndex(bookCard, index) {
+  let dataIndex = bookCard.getAttribute('data-index');
+  if (dataIndex > index) {
+    const markRead = document.querySelector(`.book-card[data-index="${dataIndex}"] button:first-child`);
+    const remove = document.querySelector(`.book-card[data-index="${dataIndex}"] button:last-child`);
+
+    dataIndex = dataIndex - 1;
+
+    bookCard.setAttribute('data-index', dataIndex);
+    markRead.setAttribute('data-index', dataIndex);
+    remove.setAttribute('data-index', dataIndex);
+  }
+}
+
 /* ------------------------ MAIN PROGRAM ------------------ */
 
 const titleInput = document.getElementById('book-title');
@@ -110,8 +124,15 @@ submitBtn.addEventListener('click', (e) => {
     const readPara = document.querySelector(`.book-card[data-index="${index}"] p:last-of-type`);
 
     removeBtn.addEventListener('click', (e) => {
+      let removeIndex = removeBtn.getAttribute('data-index');
+      bookArray.splice(removeIndex, 1);
       bookCard.remove();
-      bookArray.splice(index, 1);
+      
+      const bookCards = document.querySelectorAll('div.book-card');
+      
+      bookCards.forEach((card) => {
+        shiftDataIndex(card, removeIndex);
+      })
     })
 
     markReadBtn.addEventListener('click', (e) => {
