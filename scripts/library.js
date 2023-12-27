@@ -94,6 +94,21 @@ function shiftDataIndex(bookCard, index) {
   }
 }
 
+function switchReadClass(book, card) {
+  if(book.read === 'read') {
+    card.classList.remove('book-card-not-read');
+    card.classList.add('book-card-read');
+  } else {
+    card.classList.remove('book-card-read');
+    card.classList.add('book-card-not-read');
+  }
+}
+
+function removeBook(arr, card, removeBtn, index) {
+  arr.splice(index, 1);
+  card.remove();
+}
+
 /* ------------------------ MAIN PROGRAM ------------------ */
 
 const titleInput = document.getElementById('book-title');
@@ -125,8 +140,7 @@ submitBtn.addEventListener('click', (e) => {
 
     removeBtn.addEventListener('click', (e) => {
       let removeIndex = removeBtn.getAttribute('data-index');
-      bookArray.splice(removeIndex, 1);
-      bookCard.remove();
+      removeBook(bookArray, bookCard, removeBtn, removeIndex);
       
       const bookCards = document.querySelectorAll('div.book-card');
       
@@ -138,13 +152,7 @@ submitBtn.addEventListener('click', (e) => {
     markReadBtn.addEventListener('click', (e) => {
       book.toggleRead();
       readPara.innerText = book.read;
-      if(book.read === 'read') {
-        bookCard.classList.remove('book-card-not-read');
-        bookCard.classList.add('book-card-read');
-      } else {
-        bookCard.classList.remove('book-card-read');
-        bookCard.classList.add('book-card-not-read');
-      }
+      switchReadClass(book, bookCard);
     })
 
     resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
