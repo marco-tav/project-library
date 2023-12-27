@@ -12,3 +12,4 @@ Everything "works" but some issues need to be fixed.
 
 - Form validations isn't working properly. E.g: pages input shouldn't allow you to enter a non number type.
 - Validation messages need a better delivery method than 'alert'.
+- Validation styling is unfinished.
