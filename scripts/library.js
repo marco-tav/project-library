@@ -32,8 +32,9 @@ function resetInput(titleInput, authorInput, genreInput, pagesInput, readInput) 
 }
 
 function createBookCard(book, array) {
-  const bookCard = document.createElement('div');
   let bookIndex = array.indexOf(book);
+
+  const bookCard = document.createElement('div');
   bookCard.setAttribute('data-index', bookIndex);
   bookCard.classList.add('book-card');
   if (book.read === 'read') {
