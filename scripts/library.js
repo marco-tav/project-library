@@ -114,50 +114,53 @@ function removeBook(arr, card, index) {
 
 /* ------------------------ MAIN PROGRAM ------------------ */
 
-const titleInput = document.getElementById('book-title');
-const authorInput = document.getElementById('book-author');
-const genreInput = document.getElementById('book-genre');
-const pagesInput = document.getElementById('book-pages');
-const readInput = document.getElementById('book-read');
-const submitBtn = document.getElementById('submit');
-const booksContainer = document.querySelector('.books-container');
-
-const bookArray = [];
-
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+const libraryApp = (function() {
   
-  if(!titleInput.value || !authorInput.value) {
-    alert('You need to include a title and an author!');
-  } else {
-    const book = createAndStoreBook(titleInput.value, authorInput.value, genreInput.value, pagesInput.value, readInput.checked, bookArray);
+  const titleInput = document.getElementById('book-title');
+  const authorInput = document.getElementById('book-author');
+  const genreInput = document.getElementById('book-genre');
+  const pagesInput = document.getElementById('book-pages');
+  const readInput = document.getElementById('book-read');
+  const submitBtn = document.getElementById('submit');
+  const booksContainer = document.querySelector('.books-container');
 
-    let index = bookArray.indexOf(book);
+  const bookArray = [];
 
-    const bookCard = createBookCard(book, bookArray);
-    booksContainer.appendChild(bookCard);
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    if(!titleInput.value || !authorInput.value) {
+      alert('You need to include a title and an author!');
+    } else {
+      const book = createAndStoreBook(titleInput.value, authorInput.value, genreInput.value, pagesInput.value, readInput.checked, bookArray);
 
-    const markReadBtn = document.querySelector(`.book-card[data-index="${index}"] button:first-child`);
-    const removeBtn = document.querySelector(`.book-card[data-index="${index}"] button:last-child`);
-    const readPara = document.querySelector(`.book-card[data-index="${index}"] p:last-of-type`);
+      let index = bookArray.indexOf(book);
 
-    removeBtn.addEventListener('click', (e) => {
-      let removeIndex = removeBtn.getAttribute('data-index');
-      removeBook(bookArray, bookCard, removeBtn, removeIndex);
-      
-      const bookCards = document.querySelectorAll('div.book-card');
-      
-      bookCards.forEach((card) => {
-        shiftDataIndex(card, removeIndex);
+      const bookCard = createBookCard(book, bookArray);
+      booksContainer.appendChild(bookCard);
+
+      const markReadBtn = document.querySelector(`.book-card[data-index="${index}"] button:first-child`);
+      const removeBtn = document.querySelector(`.book-card[data-index="${index}"] button:last-child`);
+      const readPara = document.querySelector(`.book-card[data-index="${index}"] p:last-of-type`);
+
+      removeBtn.addEventListener('click', (e) => {
+        let removeIndex = removeBtn.getAttribute('data-index');
+        removeBook(bookArray, bookCard, removeBtn, removeIndex);
+        
+        const bookCards = document.querySelectorAll('div.book-card');
+        
+        bookCards.forEach((card) => {
+          shiftDataIndex(card, removeIndex);
+        })
       })
-    })
 
-    markReadBtn.addEventListener('click', (e) => {
-      book.toggleRead();
-      readPara.innerText = book.read;
-      switchReadClass(book, bookCard);
-    })
+      markReadBtn.addEventListener('click', (e) => {
+        book.toggleRead();
+        readPara.innerText = book.read;
+        switchReadClass(book, bookCard);
+      })
 
-    resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
-  }
-})
+      resetInput(titleInput, authorInput, genreInput, pagesInput, readInput);
+    }
+  })
+})();
