@@ -1,19 +1,21 @@
-/* ---------------- FUNCTION DECLARATIONS ------------------ */
+/* ---------------- FUNCTION AND CLASS DECLARATIONS ------------------ */
 
-function Book(title, author, genre, pages, read = false, onDisplay = false) {
-  this.title = title;
-  this.author = author;
-  this.genre = genre;
-  this.pages = +pages;
-  this.read = read ? "read" : "not read";
-  this.onDisplay = onDisplay;
-}
+class Book {
+  constructor(title, author, genre, pages, read = false, onDisplay = false) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.pages = +pages;
+    this.read = read ? "read" : "not read";
+    this.onDisplay = onDisplay;
+  }
 
-Book.prototype.toggleRead = function() {
-  if(this.read === "not read") {
-    this.read = "read";
-  } else {
-    this.read = "not read";
+  toggleRead = function() {
+    if(this.read === "not read") {
+      this.read = "read";
+    } else {
+      this.read = "not read";
+    }
   }
 }
 
@@ -105,7 +107,7 @@ function switchReadClass(book, card) {
   }
 }
 
-function removeBook(arr, card, removeBtn, index) {
+function removeBook(arr, card, index) {
   arr.splice(index, 1);
   card.remove();
 }
